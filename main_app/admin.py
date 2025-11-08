@@ -1,8 +1,23 @@
 from django.contrib import admin
+from .models import (
+    HeroSlide, AboutSection, StudentLife, NewsArticle,
+    GalleryImage, Footer, FooterLinkCategory, FooterLink
+)
 
-# Register your models here.
-from django.contrib import admin
-from .models import About, GalleryImage
+# Inline link management for footer
+class FooterLinkInline(admin.TabularInline):
+    model = FooterLink
+    extra = 1
 
-admin.site.register(About)
+
+class FooterLinkCategoryAdmin(admin.ModelAdmin):
+    inlines = [FooterLinkInline]
+
+
+admin.site.register(HeroSlide)
+admin.site.register(AboutSection)
+admin.site.register(StudentLife)
+admin.site.register(NewsArticle)
 admin.site.register(GalleryImage)
+admin.site.register(Footer)
+admin.site.register(FooterLinkCategory, FooterLinkCategoryAdmin)

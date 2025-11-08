@@ -118,12 +118,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR /'templates' /'static',  # ✅ use your frontend static folder
+    BASE_DIR / 'templates' / 'static',  # keep static inside templates
 ]
 
-
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR /'templates'/ 'media'
+MEDIA_ROOT = BASE_DIR / 'templates' / 'media'  # keep media inside templates
+
+
 
 
 # Default primary key field type

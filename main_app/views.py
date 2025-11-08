@@ -1,15 +1,24 @@
 from django.shortcuts import render
-
-# Create your views here.
-# main_app/views.py
-from django.shortcuts import render
-from .models import About, GalleryImage
-
-
-
+from .models import HeroSlide, AboutSection, StudentLife, NewsArticle, GalleryImage, Footer
 
 def index(request):
-    return render(request, 'index.html')
+    slides = HeroSlide.objects.all()
+    about = AboutSection.objects.first()
+    student_life = StudentLife.objects.first()
+    news = NewsArticle.objects.all().order_by('-id')[:4]
+    gallery = GalleryImage.objects.all()
+    footer = Footer.objects.first()
+
+    context = {
+        'slides': slides,
+        'about': about,
+        'student_life': student_life,
+        'news': news,
+        'gallery': gallery,
+        'footer': footer,
+    }
+    return render(request, 'index.html', context)
+
 
 def about(request):
     return render(request, 'about.html')
@@ -23,8 +32,7 @@ def academics(request):
 def admissions(request):
     return render(request, 'admissions.html')
 
-def alumni(request):
-    return render(request, 'alumni.html')
+
 
 def campus_facilities(request):
     return render(request, 'campus-facilities.html')

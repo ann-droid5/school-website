@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,22 +10,22 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="static/img/favicon.png" rel="icon">
-  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+<link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="static/css/main.css" rel="stylesheet">
+  <link href="{% static 'css/main.css' %}"
+ rel="stylesheet">
 
 
 </head>
@@ -36,7 +37,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="static/img/logo.webp" alt=""> -->
+        <!-- <img src="static/img/logo.webp' %}" alt=""> -->
         <i class="bi bi-buildings"></i>
         <h1 class="sitename">MySchool</h1>
       </a>
@@ -44,24 +45,25 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li class="dropdown"><a href="about.html" class="active"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="{% url 'about' %}" class="active"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="about.html" class="active">About Us</a></li>
-              <li><a href="admissions.html">Admissions</a></li>
-              <li><a href="academics.html">Academics</a></li>
-              <li><a href="faculty-staff.html">Faculty &amp; Staff</a></li>
-              <li><a href="campus-facilities.html">Campus &amp; Facilities</a></li>
+              <li><a href="{% url 'about' %}" class="active">About Us</a></li>
+              <li><a href="{% url 'admissions' %}">Admissions</a></li>
+              <li><a href="{% url 'academics' %}">Academics</a></li>
+              <li><a href="{% url 'faculty_staff' %}">Faculty &amp; Staff</a></li>
+              <li><a href="{% url 'campus_facilities' %}">Campus &amp; Facilities</a></li>
             </ul>
           </li>
 
-          <li><a href="students-life.html">Students Life</a></li>
-          <li><a href="news.html">News</a></li>
+          <li><a href="{% url 'students_life' %}">Students Life</a></li>
+
+          
           <li><a href="events.html">Events</a></li>
-          <li><a href="alumni.html">Alumni</a></li>
+          
           <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="news-details.html">News Details</a></li>
-              <li><a href="event-details.html">Event Details</a></li>
+              <li><a href="{% url 'event_details' %}">Event Details</a></li>
               <li><a href="privacy.html">Privacy</a></li>
               <li><a href="terms-of-service.html">Terms of Service</a></li>
               <li><a href="404.html">Error 404</a></li>
@@ -86,7 +88,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -147,7 +149,7 @@
 
                 <div class="leader-profile">
                   <div class="profile-image">
-                    <img src="static/img/person/person-f-8.webp" alt="Director" class="img-fluid">
+                    <img src="{% static 'img/person/person-f-8.webp' %}" alt="Director" class="img-fluid">
                   </div>
                   <div class="profile-info">
                     <h4>Dr. Sarah Chen</h4>
@@ -161,21 +163,21 @@
             <div class="col-lg-6">
               <div class="faculty-grid">
                 <div class="faculty-member">
-                  <img src="static/img/person/person-m-12.webp" alt="Faculty" class="img-fluid">
+                  <img src="{% static 'img/person/person-m-12.webp' %}" alt="Faculty" class="img-fluid">
                   <div class="member-info">
                     <h5>Prof. Michael Torres</h5>
                     <span>Dean of Sciences</span>
                   </div>
                 </div>
                 <div class="faculty-member">
-                  <img src="img/person/person-f-11.webp" alt="Faculty" class="img-fluid">
+                  <img src="img/person/person-f-11.webp' %}" alt="Faculty" class="img-fluid">
                   <div class="member-info">
                     <h5>Dr. Elena Rodriguez</h5>
                     <span>Research Coordinator</span>
                   </div>
                 </div>
                 <div class="faculty-member">
-                  <img src="static/img/person/person-m-9.webp" alt="Faculty" class="img-fluid">
+                  <img src="{% static 'img/person/person-m-9.webp' %}" alt="Faculty" class="img-fluid">
                   <div class="member-info">
                     <h5>Dr. James Wilson</h5>
                     <span>Innovation Director</span>
@@ -225,7 +227,7 @@
           <div class="row align-items-center">
             <div class="col-lg-5">
               <div class="campus-visual">
-                <img src="static/img/education/campus-5.webp" alt="Campus Facilities" class="main-image img-fluid">
+                <img src="{% static 'img/education/campus-5.webp' %}" alt="Campus Facilities" class="main-image img-fluid">
                 <div class="floating-stats">
                   <div class="stat-card">
                     <span class="stat-number">25+</span>
@@ -295,7 +297,7 @@
         <div class="leadership-grid">
           <div class="featured-leader">
             <div class="leader-image-large">
-              <img src="static/img/education/teacher-3.webp" alt="Principal" class="img-fluid">
+              <img src="{% static 'img/education/teacher-3.webp' %}" alt="Principal" class="img-fluid">
             </div>
             <div class="leader-details">
               <h3>Dr. Margaret Thompson</h3>
@@ -326,7 +328,7 @@
           <div class="leadership-team-grid">
             <div class="team-member">
               <div class="member-photo">
-                <img src="static/img/person/person-m-4.webp" alt="Vice Principal" class="img-fluid">
+                <img src="{% static 'img/person/person-m-4.webp' %}" alt="Vice Principal" class="img-fluid">
                 <div class="member-overlay">
                   <div class="member-social">
                     <a href="#"><i class="bi bi-linkedin"></i></a>
@@ -343,7 +345,7 @@
 
             <div class="team-member">
               <div class="member-photo">
-                <img src="static/img/person/person-f-6.webp" alt="Academic Coordinator" class="img-fluid">
+                <img src="{% static 'img/person/person-f-6.webp' %}" alt="Academic Coordinator" class="img-fluid">
                 <div class="member-overlay">
                   <div class="member-social">
                     <a href="#"><i class="bi bi-linkedin"></i></a>
@@ -360,7 +362,7 @@
 
             <div class="team-member">
               <div class="member-photo">
-                <img src="static/img/person/person-m-9.webp" alt="Student Affairs" class="img-fluid">
+                <img src="{% static 'img/person/person-m-9.webp' %}" alt="Student Affairs" class="img-fluid">
                 <div class="member-overlay">
                   <div class="member-social">
                     <a href="#"><i class="bi bi-linkedin"></i></a>
@@ -377,7 +379,7 @@
 
             <div class="team-member">
               <div class="member-photo">
-                <img src="static/img/person/person-f-11.webp" alt="Curriculum Head" class="img-fluid">
+                <img src="{% static 'img/person/person-f-11.webp' %}" alt="Curriculum Head" class="img-fluid">
                 <div class="member-overlay">
                   <div class="member-social">
                     <a href="#"><i class="bi bi-linkedin"></i></a>
@@ -394,7 +396,7 @@
 
             <div class="team-member">
               <div class="member-photo">
-                <img src="static/img/person/person-m-13.webp" alt="Operations Manager" class="img-fluid">
+                <img src="{% static 'img/person/person-m-13.webp' %}" alt="Operations Manager" class="img-fluid">
                 <div class="member-overlay">
                   <div class="member-social">
                     <a href="#"><i class="bi bi-linkedin"></i></a>
@@ -411,7 +413,8 @@
 
             <div class="team-member">
               <div class="member-photo">
-                <img src="static/img/person/person-f-14.webp" alt="Admissions Director" class="img-fluid">
+                <img src="{% static 'img/person/person-f-14.webp' %}" alt="Admissions Director" class="img-fluid">
+
                 <div class="member-overlay">
                   <div class="member-social">
                     <a href="#"><i class="bi bi-linkedin"></i></a>
@@ -627,15 +630,15 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="static/vendor/php-email-form/validate.js"></script>
-  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+
 
   <!-- Main JS File -->
-  <script src="static/js/main.js"></script>
-
+  <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>

@@ -899,6 +899,57 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
+/* Hero Carousel */
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#hero .carousel-item {
+  height: 100vh;
+  position: relative;
+}
+
+#hero .carousel-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero .carousel-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#hero .carousel-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+#hero .btn {
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+}
+
+#hero .carousel-control-prev-icon,
+#hero .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+#hero .carousel-indicators button {
+  background-color: #fff;
+}
+
 .hero {
   padding: 0;
   position: relative;
