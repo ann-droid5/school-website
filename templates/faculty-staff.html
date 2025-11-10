@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Faculty & Staff - MySchool</title>
+
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+        
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'academics' %}">Academics</a></li>
+          <li><a href="{% url 'admissions' %}">Admissions</a></li>
+          <li><a href="{% url 'faculty_staff' %}" class="active">Faculty & Staff</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main id="main">
+    <section id="faculty" class="faculty section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Faculty & Staff</h2>
+          <p>Meet our dedicated and experienced team who guide and inspire our students every day.</p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="member">
+              <img src="{% static 'img/faculty1.jpg' %}" class="img-fluid rounded-3" alt="">
+              <h4>Dr. Asha Nair</h4>
+              <span>Principal</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member">
+              <img src="{% static 'img/faculty2.jpg' %}" class="img-fluid rounded-3" alt="">
+              <h4>Mr. Ravi Kumar</h4>
+              <span>Head of Science Department</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member">
+              <img src="{% static 'img/faculty3.jpg' %}" class="img-fluid rounded-3" alt="">
+              <h4>Ms. Priya Sharma</h4>
+              <span>Mathematics Faculty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container text-center">
+      <p>© 2025 MySchool. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
